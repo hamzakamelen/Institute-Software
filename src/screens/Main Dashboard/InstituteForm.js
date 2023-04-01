@@ -5,9 +5,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import HomeIcon from '@mui/icons-material/Home';
 import CallIcon from '@mui/icons-material/Call';
 import HolidayVillageIcon from '@mui/icons-material/HolidayVillage';
-import HzForm from '../components/HzForm';
+import HzForm from '../../components/HzForm';
 
-function RegisterationForm(){
+function InstituteForm(){
     let textfield = [
         {
             name: "Institute Name",
@@ -47,11 +47,23 @@ function RegisterationForm(){
             icon: <CallIcon />
         }
     ]
-    
-    let dropdownitems = ["School", "College", "University", "Technical Institute"]
-return(
- < HzForm labels = { textfield } title = "Institute Registeration" btntitle = "Submit"
-    formlabel = "Type" dropdown = { dropdownitems } />
-    )
+    let radioitems=[
+        {
+          name: "Gender",
+          value:["Male","Female","Other"]
+        }
+      ]
+    let dropdownitems =[{
+        name:"Type", 
+     value: ["School", "College", "University", "Technical Institute"]}]
+return (
+  <HzForm
+  radioitem={radioitems}
+    labels={textfield}
+    MainHeading="Institute Registeration"
+    btntitle="Submit"
+    dropdownitem={dropdownitems}
+  />
+);
 } 
-export default RegisterationForm;
+export default InstituteForm;

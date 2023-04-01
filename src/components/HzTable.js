@@ -1,8 +1,9 @@
-import { Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import './ComponentsCss/HzTable.css';
 
 function HzTable(prop){
 
-    const {data, title , tableheads} = prop
+    const {data, title,btnTitle,btnonClick , tableheads} = prop
 
     
     return(
@@ -11,9 +12,24 @@ function HzTable(prop){
         <div>
         <Typography variant="h2">{title}</Typography>
         </div>
-        <table border={1}>
+        <Box>
+          <Button
+            sx={{ 
+              width: "15%",
+              fontSize: "19px",
+              fontWeight: "bold",
+              marginLeft: "80%",
+            }}
+            variant="contained"
+            size="medium"
+            onClick={btnonClick}
+          >
+            {btnTitle}
+          </Button>
+        </Box>
+        <table cellSpacing={0} cellPadding={0} className="table table-stripped ">
             <thead>
-                <tr>
+                <tr >
                     {tableheads.map((x,i)=>{
                         return(
                     <th key={i}>{x}</th>
@@ -21,7 +37,7 @@ function HzTable(prop){
                     })}
                 </tr>
             </thead>
-            <tbody>
+            <tbody >
                 
                 {data.map((x,i)=>{
                     return(
