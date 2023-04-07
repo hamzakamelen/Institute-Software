@@ -11,26 +11,39 @@ import Quiz from "../screens/Institute Dashboard/Quiz";
 import RegisterationControl from "../screens/Institute Dashboard/RegisterationControl";
 import EnrolledStudents from "../screens/Institute Dashboard/EnrolledStudents";
 import Courses from "../screens/Institute Dashboard/Courses";
+import CourseForm from "../screens/Institute Dashboard/CourseForm";
+import Profile from "../screens/Student Dashboard/Profile";
+import AttendanceReport from "../screens/Student Dashboard/AttendanceReport";
+import ExamResults from "../screens/Student Dashboard/ExamResults";
+import UploadResult from "../screens/Institute Dashboard/UploadResult";
 function Routers() {
     return (
       <BrowserRouter>
         <Routes>
           {/* //Main Dashboard// */}
-          <Route path="/" element={<MainDashboard />} />
+          <Route path="MainDashboard/*" element={<MainDashboard />} />
           <Route path="RegisteredInstitute.js" element={<RegisteredInstitute />} />
           <Route path="InstituteForm" element={<InstituteForm />} />
+
           {/* // Student Dashboard// */}
-          <Route path="StudentDashboard" element={<StudentDashboard />} />
+          <Route path="StudentDashboard/*" element={<StudentDashboard />} />
+          <Route path="Profile" element={<Profile />} />
+          <Route path="AttendanceReport" element={<AttendanceReport />} />
+          <Route path="ExamResults" element={<ExamResults />} />
+
           {/* // Institute Dashboard// */}
-          <Route path="InstituteDashboard" element={<InstituteDashboard />} />
+          <Route path="InstituteDashboard/*" element={<InstituteDashboard />} />
           <Route path="Courses" element={<Courses />} />
+          <Route path="CourseForm" element={<CourseForm />} />
           <Route path="EnrolledStudents" element={<EnrolledStudents />} />
           <Route path="Quiz" element={<Quiz />} />
           <Route path="RegisterationControl" element={<RegisterationControl />} />
+          <Route path="Institutedashboard/UploadResult" element={<UploadResult />} />
+
           {/* //Public Route //  */}
           <Route path="RegisterationForm" element={<RegisterationForm />} />
           <Route path="Result" element={<Result />} />
-          <Route path="Login" element={<Login />} />
+          <Route path="/" element={<Login />} />
 
         </Routes>
       </BrowserRouter>

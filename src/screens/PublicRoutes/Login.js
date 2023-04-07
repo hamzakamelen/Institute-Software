@@ -11,9 +11,25 @@ function Login(){
     icon: <LockOpenIcon />
 }
 ]
+const menu = [
+    {
+      name: "Profile",
+      route: "Profile",
+    },
+    {
+      name: "Attendance Report",
+      route: "AttendanceReport",
+    },
+    {
+      name: "Results",
+      route: "ExamResults",
+    },
+  ];
 let dropdownitems =[{
     name:"Type", 
- value: ["Student", "Admin", "Teacher", "Institute"]}]
+ value: ["Student", "Admin", "Teacher", "Institute"]
+
+}]
     return(
         <>
          <HzForm

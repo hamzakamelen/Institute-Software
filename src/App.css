@@ -1,17 +1,7 @@
-/* .Username {
-  margin-left: 20% !important;
-  width: 60%;
-  margin-top: 5% !important;
+.heading{
+  text-align: center;
 }
-.Type{
-  margin-top: 5% !important;
-  width: 50% !important;
-  margin-left: 20% !important;
+.EnrolledStudentstable{
+  width: 80% !important;
+  margin-top: 6%;
 }
-.form-select{
-  margin-top: 2%;
-  margin-left: 150px;
-  font-size: 20px;
-  height: 40px;
-  width: 150px;
-} */

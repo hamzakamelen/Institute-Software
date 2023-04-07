@@ -11,7 +11,7 @@ function HzForm(prop) {
     <>
       <Typography sx={{ marginLeft: "10%", marginTop: "2%", }} variant="h3">{MainHeading}</Typography>
       <br />
-      {labels.map((x, i) => {
+      {labels && Array.isArray(labels) && labels.length > 0 ? labels.map((x, i) => {
         return (
           <>
             <br />
@@ -30,9 +30,9 @@ function HzForm(prop) {
             <br />
           </>
         );
-      })}
-      {/* {radioitem.map((x,i)=>{
-        return(
+      }):null}
+      {radioitem && Array.isArray(radioitem) && radioitem.length > 0 ?  radioitem.map((x,i)=>{
+        return( 
           <>
       <RadioGroup key={i} sx={{ marginLeft: "10%", width: "40%", marginTop: "15px" }}
        name="use-radio-group" defaultValue={x.value[0]}>
@@ -49,9 +49,9 @@ function HzForm(prop) {
   
 </RadioGroup>
 </>
-)})} */}
+)}):null}
 
-      {dropdownitem.map((x, i) => {
+      {dropdownitem && Array.isArray(dropdownitem) && dropdownitem.length > 0 ? dropdownitem.map((x, i) => {
         return (<>
         <br />
           <FormControl key={i} sx={{ marginLeft: "10%", width: "40%", marginTop: "10px" }}>
@@ -74,7 +74,7 @@ function HzForm(prop) {
           </FormControl>
         </>
         )
-      })}
+      }):null}
 
       <Box>
         <Button

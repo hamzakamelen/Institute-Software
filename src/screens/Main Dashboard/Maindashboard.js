@@ -20,9 +20,8 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
-import HzTable from '../../components/HzTable';
 import RegisteredInstitute from './RegisteredInstitute';
+import InstituteForm from './InstituteForm';
 
 
 
@@ -100,10 +99,10 @@ export default function MainDashboard() {
       name: "RegisteredInstitute",
       route: "RegisteredInstitute",
     },
-    // {
-    //   name: "Registeration form",
-    //   route: "PublicForm",
-    // },
+    {
+      name: "Institute Form",
+      route: "InstituteForm",
+    },
   ];
 let navigate = useNavigate();
 let changeScreen = (route) => {
@@ -217,8 +216,8 @@ navigate(`${route}`)
         <DrawerHeader />
      
         <Routes>
-        <Route path="RegisteredInstitute" element={<RegisteredInstitute />} />
-          <Route path="/" element={<RegisteredInstitute />} />
+          <Route path="Maindashboard/" element={<RegisteredInstitute />} />
+          <Route path="Maindashboard/InstituteForm" element={<InstituteForm />} />
           {/* <Route path="/Institute" element={<Institute />} />
           <Route path="/PublicForm" element={<PublicForm />} /> */}
         </Routes>

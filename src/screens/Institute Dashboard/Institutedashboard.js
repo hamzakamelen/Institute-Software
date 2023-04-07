@@ -18,8 +18,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Courses from './Courses';
+import CourseForm from './CourseForm';
+import EnrolledStudents from './EnrolledStudents';
+import Quiz from './Quiz';
+import RegisterationControl from './RegisterationControl';
+import UploadResult from './UploadResult';
 
 const drawerWidth = 240;
 
@@ -79,6 +84,32 @@ export default function InstituteDashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const menu = [
+    {
+      name: "Courses",
+      route: "Courses",
+    },
+    {
+      name: "Enrolled Students",
+      route: "EnrolledStudents",
+    },
+    {
+      name: "Registeration Control",
+      route: "RegisterationControl",
+    },
+    {
+      name: "Upload Result",
+      route: "UploadResult",
+    },
+    {
+      name: "Quiz",
+      route: "Quiz",
+    },
+  ];
+  let navigate = useNavigate();
+let changeScreen = (route) => {
+navigate(`${route}`)
+}
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -119,13 +150,15 @@ export default function InstituteDashboard() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Courses', 'Registration Control', 'Result', 'Enrolled Students','Quiz'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+          {menu.map((text, index) => (
+            <ListItem
+            onClick={() => changeScreen(text.route)}
+            key={text.name} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={text.name} />
               </ListItemButton>
             </ListItem>
           ))}
@@ -135,9 +168,13 @@ export default function InstituteDashboard() {
         <DrawerHeader />
         <Routes>
         <Route path="/" element={<Courses />} />
-          {/* <Route path="*" element={<RegisteredInstitute />} /> */}
-          {/* <Route path="/Institute" element={<Institute />} />
-          <Route path="/PublicForm" element={<PublicForm />} /> */}
+        <Route path="/Courses" element={<Courses />} />
+          <Route path="Institutedashboard/CourseForm" element={<CourseForm />} />
+          <Route path="/EnrolledStudents" element={<EnrolledStudents />} />
+          <Route path="Institutedashboard/Quiz" element={<Quiz />} />
+          <Route path="Institutedashboard/RegisterationControl" element={<RegisterationControl />} />
+          <Route path="Institutedashboard/UploadResult" element={<UploadResult />} />
+
         </Routes>
     </Box>
   );

@@ -10,45 +10,46 @@ function HzTable(prop){
       <>
       <div>
         <div>
-        <Typography variant="h2">{title}</Typography>
+        <Typography variant="h3">{title}</Typography>
         </div>
-        <Box>
-          <Button
+        {btnTitle && btnonClick?<Box>
+           <Button
             sx={{ 
               width: "15%",
               fontSize: "19px",
               fontWeight: "bold",
               marginLeft: "80%",
+              marginTop:"-5%"
             }}
-            variant="contained"
+            variant="outlined"
             size="medium"
             onClick={btnonClick}
           >
             {btnTitle}
           </Button>
-        </Box>
-        <table cellSpacing={0} cellPadding={0} className="table table-stripped ">
+        </Box>:null}
+        <table  cellSpacing={0} cellPadding={0} className="table border-1 table-stripped mt-2">
             <thead>
                 <tr >
-                    {tableheads.map((x,i)=>{
+                    {tableheads && Array.isArray(tableheads) && tableheads.length > 0 ? tableheads.map((x,i)=>{
                         return(
-                    <th key={i}>{x}</th>
+                    <th className="text-center" key={i}>{x}</th>
                     )    
-                    })}
+                    }):null}
                 </tr>
             </thead>
             <tbody >
                 
-                {data.map((x,i)=>{
+                {data && Array.isArray(data) && data.length > 0 ?data.map((x,i)=>{
                     return(
                         <tr key={i}>
-                        <td width="250px" align="center" ><img src={x.logo} /></td>
+                       {x.logo ? <td width="250px" align="center" ><img src={x.logo} /></td>:null}
                         <td width="250px" align="center" >{x.name}</td>
                         <td width="250px" align="center" >{x.campus}</td>
                         <td width="250px" align="center" >{x.Status}</td>
                         </tr>
                         )
-                })}
+                }):null}
             </tbody>
 
           </table>
