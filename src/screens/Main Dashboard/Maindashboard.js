@@ -216,7 +216,7 @@ navigate(`${route}`)
         <DrawerHeader />
      
         <Routes>
-          <Route path="Maindashboard/" element={<RegisteredInstitute />} />
+          <Route path="/" element={<RegisteredInstitute />} />
           <Route path="Maindashboard/InstituteForm" element={<InstituteForm />} />
           {/* <Route path="/Institute" element={<Institute />} />
           <Route path="/PublicForm" element={<PublicForm />} /> */}

@@ -47,18 +47,11 @@ function InstituteForm(){
             icon: <CallIcon />
         }
     ]
-    let radioitems=[
-        {
-          name: "Gender",
-          value:["Male","Female","Other"]
-        }
-      ]
     let dropdownitems =[{
         name:"Type", 
      value: ["School", "College", "University", "Technical Institute"]}]
 return (
   <HzForm
-  radioitem={radioitems}
     labels={textfield}
     MainHeading="Institute Registeration"
     btntitle="Submit"
