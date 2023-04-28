@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material"
+
 function EnrolledStudents(){
     let tableheads =["Student Name","Course","Fees"]
     let tablebody =[
@@ -74,6 +76,7 @@ function EnrolledStudents(){
     ]
     return(
         <>
+        <Typography fontSize={50} marginTop={10}>Students</Typography>
         <table  className="table border-dark EnrolledStudentstable table-striped border-1">
             <thead>
             <tr>
@@ -98,9 +101,6 @@ function EnrolledStudents(){
                     )
                 }
                 ):null}
-                <tr>
-                    <td></td>
-                </tr>
             </tbody>
         </table>
         </>

@@ -11,6 +11,30 @@ import HomeIcon from "@mui/icons-material/Home";
 import CakeIcon from "@mui/icons-material/Cake";
 
 function RegisterationForm() {
+//   const submit = () => {
+//     setButtonLoading(true)
+//     if (Object.values(studentObj).length >= 8) {
+//         writeToDatabase(studentObj)
+//             .then((success) => {
+//                 // Signed in 
+//                 alert(success);
+//                 navigate("/showReg", {
+//                     state: studentObj
+//                 });
+//                 setButtonLoading(false)
+//             })
+//             .catch((error) => {
+//                 const errorMessage = error.message;
+//                 const errorMessageUp = errorMessage.toUpperCase();
+//                 alert(errorMessageUp)
+//                 setButtonLoading(false)
+//             });
+//     } else {
+//         alert('ALL FIELDS MUST BE FILLED')
+//         setButtonLoading(false)
+//     }
+// }
+
   let textfield = [
     {
       name: "Student Name",

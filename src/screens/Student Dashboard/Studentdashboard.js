@@ -22,6 +22,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import Profile from './Profile';
 import ExamResults from './ExamResults';
 import AttendanceReport from './AttendanceReport';
+import Payment from './Payment';
 
 const drawerWidth = 240;
 
@@ -96,6 +97,10 @@ export default function StudentDashboard() {
       name: "Results",
       route: "ExamResults",
     },
+    {
+      name: "Transaction History",
+      route: "Payment"
+    },
   ];
   let navigate = useNavigate();
 let changeScreen = (route) => {
@@ -159,10 +164,12 @@ navigate(`${route}`)
       </Drawer>
         <DrawerHeader />
         <Routes>
-          <Route path="Studentdashboard/" element={<Profile />} />
-          <Route path="Studentdashboard/AttendanceReport" element={<AttendanceReport />} />
-          <Route path="Studentdashboard/ExamResults" element={<ExamResults />} />
-          </Routes>
+          <Route path="/" element={<Profile />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/AttendanceReport" element={<AttendanceReport />} />
+          <Route path="/ExamResults" element={<ExamResults />} />
+          <Route path="/Payment" element={<Payment />} />
+        </Routes>
     </Box>
   );
 }

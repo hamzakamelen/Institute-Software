@@ -6,7 +6,7 @@ import { Box } from "@mui/system";
 
 function HzForm(prop) {
 
-  const { labels,radioitem, MainHeading, btntitle, dropdownitem } = prop;
+  const { labels,radioitem, MainHeading, btntitle, dropdownitem, onclick } = prop;
   return (
     <>
       <Typography sx={{ marginLeft: "10%", marginTop: "2%", }} variant="h3">{MainHeading}</Typography>

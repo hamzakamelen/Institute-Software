@@ -16,6 +16,8 @@ import Profile from "../screens/Student Dashboard/Profile";
 import AttendanceReport from "../screens/Student Dashboard/AttendanceReport";
 import ExamResults from "../screens/Student Dashboard/ExamResults";
 import UploadResult from "../screens/Institute Dashboard/UploadResult";
+import Payment from "../screens/Student Dashboard/Payment";
+import Err404 from "../screens/PublicRoutes/Err404";
 function Routers() {
     return (
       <BrowserRouter>
@@ -30,6 +32,8 @@ function Routers() {
           <Route path="Profile" element={<Profile />} />
           <Route path="AttendanceReport" element={<AttendanceReport />} />
           <Route path="ExamResults" element={<ExamResults />} />
+          <Route path="Payment" element={<Payment />} />
+          
 
           {/* // Institute Dashboard// */}
           <Route path="InstituteDashboard/*" element={<InstituteDashboard />} />
@@ -44,9 +48,9 @@ function Routers() {
           <Route path="RegisterationForm" element={<RegisterationForm />} />
           <Route path="Result" element={<Result />} />
           <Route path="/" element={<Login />} />
-
+          <Route path="*" element={<Err404 />} />
         </Routes>
       </BrowserRouter>
     );
 }
-export default Routers; 
+export default Routers;
